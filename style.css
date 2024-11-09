@@ -1,0 +1,683 @@
+@font-face {
+    font-family: 'ubuntubold';
+    src: url('assets/fonts/ubuntu-bold-webfont.woff2') format('woff2'),
+        url('assets/fonts/ubuntu-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ubuntumedium';
+    src: url('assets/fonts/ubuntu-medium-webfont.woff2') format('woff2'),
+        url('assets/fonts/ubuntu-medium-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ubunturegular';
+    src: url('assets/fonts/ubuntu-regular-webfont.woff2') format('woff2'),
+        url('assets/fonts/ubuntu-regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    /* Primary color */
+    --clr-marine-blue: hsl(213, 96%, 18%);
+    --clr-purplish-blue: hsl(243, 100%, 62%);
+    --clr-pastel-blue: hsl(228, 100%, 84%);
+    --clr-light-blue: hsl(206, 94%, 87%);
+    --clr-strawberry-red: hsl(354, 84%, 57%);
+
+    /* Neutral color */
+    --clr-neutral-cool-gray: hsl(231, 11%, 63%);
+    --clr-neutral-light-gray: hsl(229, 24%, 87%);
+    --clr-neutral-magnolia: hsl(217, 100%, 97%);
+    --clr-neutral-alabaster: hsl(231, 100%, 99%);
+    --clr-neutral-white: hsl(0, 0%, 100%);
+
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core body defaults */
+body {
+    /* min-height: 100vh; */
+    line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+    line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+    text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'ubunturegular', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.bg-container {
+    background-color: var(--clr-neutral-magnolia);
+    background-image: url('assets/images/bg-sidebar-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 6rem;
+
+    display: grid;
+}
+
+.card {
+    background-color: var(--clr-neutral-white);
+    margin-inline: 1rem;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    margin-top: 2rem;
+    box-shadow: 0 0 5px 5px rgba(105, 105, 105, 0.308);
+}
+
+.button-container {
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-text {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--clr-neutral-light-gray);
+    border-radius: 5px;
+    width: 100%;
+    outline: none;
+}
+
+.input-text:hover {
+    border: 1px solid var(--clr-marine-blue);
+    cursor: pointer;
+
+}
+
+::placeholder {
+    font-family: 'ubuntumedium';
+    font-size: 0.95rem;
+    color: var(--clr-neutral-cool-gray);
+}
+
+.form-subheading {
+    color: var(--clr-marine-blue);
+}
+
+.form-para {
+    color: var(--clr-neutral-cool-gray);
+}
+
+.form-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--clr-marine-blue);
+    margin-top: 1.125rem;
+    margin-bottom: 0.35rem;
+}
+
+.btn-primary {
+    font-family: 'ubuntumedium';
+    background-color: var(--clr-marine-blue);
+    color: var(--clr-neutral-white);
+    padding: 0.75rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    font-family: 'ubuntumedium';
+    color: var(--clr-neutral-cool-gray);
+    background-color: transparent;
+    font-size: 0.85rem;
+    border: none;
+    cursor: pointer;
+    padding: 0.75rem;
+}
+
+.btn-secondary:hover {
+    color: var(--clr-marine-blue);
+}
+
+.step-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.step {
+    height: 33px;
+    width: 33px;
+    background-color: transparent;
+    border: 1px solid var(--clr-neutral-white);
+    border-radius: 50%;
+    color: var(--clr-neutral-white);
+    display: grid;
+    place-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.step-details {
+    display: none;
+}
+
+.step.active {
+    background-color: var(--clr-light-blue);
+    color: black;
+}
+
+.tab {
+    display: none;
+}
+
+.show-tab {
+    display: block;
+}
+
+.hide-btn {
+    visibility: hidden;
+}
+
+.show-btn {
+    display: inline;
+}
+
+.plan-container {
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border: 1px solid var(--clr-neutral-light-gray);
+    border-radius: 8px;
+    position: relative;
+}
+
+.plan-container:hover {
+    border: 1px solid hsl(243, 66%, 45%);
+}
+
+.plan-desktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.plan-radio {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    cursor: pointer;
+    display: block;
+    margin: 0;
+}
+
+.plan-container.selected-radio {
+    border: 1px solid hsl(243, 66%, 45%);
+    background-color: var(--clr-neutral-alabaster);
+}
+
+.plan-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-family: 'ubuntumedium';
+    color: var(--clr-marine-blue);
+}
+
+.plan-rate {
+    font-family: 'ubunturegular';
+    font-size: 0.85rem;
+    color: var(--clr-neutral-cool-gray);
+}
+
+.plan-discount {
+    font-family: 'ubunturegular';
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.mt-2 {
+    margin-top: 1.5rem;
+}
+
+.mb-1 {
+    margin-bottom: 0.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 38px;
+    height: 20px;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: var(--clr-marine-blue);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider.round {
+    border-radius: 10px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--clr-marine-blue)
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(18px);
+    -ms-transform: translateX(18px);
+    transform: translateX(18px);
+}
+
+.plan-switcher {
+    font-family: 'ubuntubold';
+    font-size: 0.9rem;
+
+    color: var(--clr-marine-blue);
+    margin-top: 1rem;
+    background-color: var(--clr-neutral-magnolia);
+    padding: 0.75rem;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.plan-switch-yearly {
+    font-family: 'ubuntumedium';
+    color: var(--clr-neutral-cool-gray);
+    font-size: 0.9rem;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.add-on-container {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+
+    border: 1px solid var(--clr-neutral-light-gray);
+    border-radius: 8px;
+    position: relative;
+}
+
+.add-on-container.selected-radio {
+    border: 1px solid hsl(243, 66%, 45%);
+    background-color: var(--clr-neutral-alabaster);
+}
+
+.add-on-container:hover {
+    border: 1px solid hsl(243, 66%, 45%);
+}
+
+.add-on-label {
+    display: flex;
+    flex-grow: 1;
+    gap: 1rem;
+    font-family: 'ubuntumedium';
+    color: var(--clr-marine-blue);
+    cursor: pointer;
+}
+
+.add-on-detail {
+    margin-top: 0.15rem;
+    font-size: 0.75rem;
+    color: var(--clr-neutral-light-gray);
+}
+
+.add-on-rate {
+    font-family: 'ubunturegular';
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    color: var(--clr-purplish-blue);
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.25em;
+    height: 1.25em;
+    border: 1px solid var(--clr-neutral-light-gray);
+    border-radius: 0.25em;
+    cursor: pointer;
+    transform: translateY(0.35em);
+
+    display: grid;
+    place-content: center;
+}
+
+#month-year-switch {
+    display: none;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--clr-purplish-blue);
+    border: none;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: var(--clr-neutral-white);
+    /* transform-origin: bottom left; */
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    /* clip-path: polygon(30% 50%, 0% 80%, 20% 100%, 52% 69%, 70% 50%, 100% 20%, 80% 0%, 50% 30%); */
+
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+    transform: rotate(20deg);
+}
+
+.final-step {
+    background-color: var(--clr-neutral-magnolia);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.summary-heading {
+    font-family: 'ubuntumedium';
+    color: var(--clr-marine-blue);
+    border-bottom: 1px solid var(--clr-neutral-light-gray);
+    padding-bottom: 0.5rem;
+}
+
+.summary-result {
+    font-family: 'ubuntumedium';
+    font-size: 0.85rem;
+    color: var(--clr-neutral-cool-gray);
+}
+
+.total-amount {
+    padding: 1rem;
+}
+
+.finish {
+    display: none;
+}
+
+.thank-you {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    height: 50svh;
+}
+
+.thank-you-text {
+    font-family: 'ubuntubold';
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--clr-marine-blue);
+}
+
+.thank-you-para {
+    color: var(--clr-neutral-cool-gray);
+}
+
+.primary-button-submit {
+    background-color: var(--clr-purplish-blue);
+}
+
+.total-amount-result {
+    font-family: 'ubuntumedium';
+    font-size: 1.2rem;
+    color: var(--clr-purplish-blue);
+}
+
+.show-error {
+    color: var(--clr-strawberry-red);
+    font-family: 'ubuntumedium';
+    font-size: 0.75rem;
+}
+
+.error {
+    border: 1px solid var(--clr-strawberry-red);
+}
+
+.radio-fieldset {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+@media (min-width:800px) {
+    body {
+        min-height: calc(100svh - 1rem);
+        display: grid;
+        place-content: center;
+        background-color: var(--clr-neutral-magnolia);
+    }
+
+    .bg-container {
+
+        max-width: 800px;
+        margin-inline: auto;
+        box-shadow: 0 0 8px 8px rgba(105, 105, 105, 0.616);
+        border-radius: 12px;
+        outline: 12px solid var(--clr-neutral-white);
+        padding-bottom: 0;
+
+        background-image: url('assets/images/bg-sidebar-desktop.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: var(--clr-neutral-white);
+
+        grid-template-columns: minmax(250px, 1fr) 3fr;
+        gap: 0;
+    }
+
+    .card {
+        background-color: var(--clr-neutral-white);
+        max-width: 550px;
+
+        padding: 2rem 1.5rem;
+        margin-top: 0;
+        box-shadow: none;
+    }
+
+    .step-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        margin-left: 2rem;
+    }
+
+    .step-cell {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .step-details {
+        display: flex;
+        flex-direction: column;
+        color: var(--clr-neutral-white);
+    }
+
+    .step-count {
+        font-size: 0.75rem;
+        opacity: 0.5;
+    }
+
+    .step-info {
+        font-family: 'ubuntubold';
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+    }
+
+    .plan-container {
+        padding: 1rem;
+        padding-right: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 3rem;
+        border: 1px solid var(--clr-neutral-light-gray);
+        border-radius: 8px;
+        position: relative;
+    }
+
+    .plan-desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+}

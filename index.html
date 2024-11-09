@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Multi-step form</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" type="module" defer></script>
+</head>
+
+<body>
+  <main class="bg-container">
+    <div class="bg-img ">
+      <div class="step-container">
+        <div class="step-cell">
+          <span class="step">1</span>
+          <div class="step-details">
+            <span class="step-count">STEP 1</span>
+            <span class="step-info">YOUR INFO</span>
+          </div>
+        </div>
+        <div class="step-cell">
+          <span class="step">2</span>
+          <div class="step-details">
+            <span class="step-count">STEP 2</span>
+            <span class="step-info">SELECT PLAN</span>
+          </div>
+        </div>
+        <div class="step-cell">
+          <span class="step">3</span>
+          <div class="step-details">
+            <span class="step-count">STEP 3</span>
+            <span class="step-info">ADD-ONS</span>
+          </div>
+        </div>
+        <div class="step-cell">
+          <span class="step">4</span>
+          <div class="step-details">
+            <span class="step-count">STEP 4</span>
+            <span class="step-info">SUMMARY</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <form novalidate>
+        <div class="tab">
+          <h2 class="form-subheading">Personal info</h2>
+          <p class="form-para">Please provide your name, email address, and phone number.</p>
+          <!-- One "tab" for each step in the form: -->
+
+          <label class="form-label" for="fname"> Name
+            <span class="show-error hide" id="fname-error" aria-live="assertive">This field is required</span>
+          </label>
+          <input placeholder="e.g. Stephen King" name="fname" id="fname" class="input-text"
+            aria-describedby="fname-error">
+
+          <label class="form-label" for="email"> Email Address
+            <span class="show-error hide" id="email-error" aria-live="assertive">This field is required or not
+              valid</span>
+          </label>
+          <input placeholder="e.g. stephenking@lorem.com" name="email" id="email" class="input-text"
+            aria-describedby="email-error">
+
+          <label class="form-label" for="phone">Phone Number
+            <span class="show-error hide" id="phone-error" aria-live="assertive">This field is required</span>
+          </label>
+          <input placeholder="e.g. +91 - 1234567890" name="phone" id="phone" class="input-text" type="tel"
+            maxlength="18" aria-describedby="phone-error">
+
+        </div>
+
+        <div class="tab">
+          <h2 class="form-subheading">Select your plan</h2>
+          <p class="form-para"> You have the option of monthly or yearly billing.</p>
+
+          <div class="mt-2">
+            <div class="show-error mb-1 plan hide" id="plan-error" aria-live="assertive">Please select any one the
+              following plan</div>
+            <div class="plan-desktop">
+
+              <div class="plan-container">
+                <img src="assets/images/icon-arcade.svg" alt="Arcade icon for plan arcade">
+                <label for="arcade" class="plan-label">Arcade
+                  <input type="radio" id="arcade" class="plan-radio" name="plan" aria-describedby="plan-error">
+
+                  <div class="monthly-plan">
+                    <div class="plan-rate"> $9/mo </div>
+                  </div>
+
+                  <div class="yearly-plan hide">
+                    <div class="plan-rate"> $90/yr </div>
+                    <div class="plan-discount"> 2 months free</div>
+                  </div>
+                </label>
+              </div>
+
+              <div class="plan-container">
+                <img src="assets/images/icon-advanced.svg" alt="Advanced icon for plan advanced">
+                <label for="advanced" class="plan-label">Advanced
+                  <input type="radio" id="advanced" class="plan-radio" name="plan" aria-describedby="plan-error">
+                  <div class="monthly-plan">
+                    <div class="plan-rate"> $12/mo </div>
+                  </div>
+
+                  <div class="yearly-plan hide">
+                    <div class="plan-rate"> $120/yr </div>
+                    <div class="plan-discount"> 2 months free</div>
+                  </div>
+                </label>
+              </div>
+
+              <div class="plan-container">
+                <img src="assets/images/icon-pro.svg" alt="Pro icon for plan pro">
+
+                <label for="pro" class="plan-label"> Pro
+                  <input type="radio" id="pro" class="plan-radio" name="plan" aria-describedby="plan-error">
+                  <div class="monthly-plan">
+                    <div class="plan-rate"> $15/mo </div>
+                  </div>
+
+                  <div class="yearly-plan hide">
+                    <div class="plan-rate"> $150/yr </div>
+                    <div class="plan-discount"> 2 months free</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="plan-switcher">
+              <span>Monthly </span>
+              <label class="switch">
+                <input type="checkbox" id="month-year-switch">
+                <span class="slider round"></span>
+              </label>
+              <span class="plan-switch-yearly">Yearly</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab">
+          <h2 class="form-subheading">Pick add-ons</h2>
+          <p class="form-para"> Add-ons help enhance your gaming experience.</p>
+
+          <div class="grid mt-2">
+            <div class="add-on-container">
+              <label for="online-service" class="add-on-label">
+                <input type="checkbox" name="add-on" class="addon-checkmark" id="online-service">
+                <span> Online service
+                  <div class="add-on-detail"> Access to multiplayer games</div>
+                </span>
+              </label>
+              <div class="monthly-plan">
+                <div class="add-on-rate"> +$1/mo </div>
+              </div>
+              <div class="yearly-plan hide">
+                <div class="add-on-rate"> +$10/yr </div>
+              </div>
+            </div>
+
+            <div class="add-on-container">
+              <label for="larger-storage" class="add-on-label">
+                <input type="checkbox" name="add-on" class="addon-checkmark" id="larger-storage">
+                <span> Larger storage
+                  <div class="add-on-detail"> Extra 1TB of cloud save </div>
+                </span>
+              </label>
+              <div class="monthly-plan">
+                <div class="add-on-rate"> +$2/mo </div>
+              </div>
+              <div class="yearly-plan hide">
+                <div class="add-on-rate"> +$20/yr </div>
+              </div>
+            </div>
+
+            <div class="add-on-container">
+              <label for="customizable-profile" class="add-on-label">
+                <input type="checkbox" name="add-on" class="addon-checkmark" id="customizable-profile">
+                <span> Customizable Profile
+                  <div class="add-on-detail">Custom theme on your profile</div>
+                </span>
+              </label>
+
+              <div class="monthly-plan">
+                <div class="add-on-rate"> +$2/mo </div>
+              </div>
+              <div class="yearly-plan hide">
+                <div class="add-on-rate"> +$20/yr </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="tab" role="region" aria-live="polite">
+          <h2 class="form-subheading">Finishing up</h2>
+          <p class="form-para">
+            Double-check everything looks OK before confirming.</p>
+          <div class="grid mt-2 final-step">
+            <dl class="d-flex summary-heading">
+              <dt>Arcade (Monthly)
+                <div class="summary-result">change</div>
+              </dt>
+              <dd> 9 </dd>
+            </dl>
+
+            <!-- dynamically adding the result here after form filled by user.  -->
+          </div>
+
+          <div class="total-amount">
+            <!-- dynamically adding the result here after form filled by user.  -->
+          </div>
+        </div>
+
+        <div class="finish">
+          <img src="assets/images/icon-thank-you.svg" alt="thank you tick icon with red color">
+          <h2 class="thank-you-text">Thank you!</h2>
+          <p class="thank-you-para">
+            Thanks for confirming your subscription! We hope you have fun
+            using our platform. If you ever need support, please feel free
+            to email us at support@loremgaming.com.</p>
+        </div>
+        <div class="button-container">
+          <button type="button" id="prevBtn" class="btn-secondary">Go Back</button>
+          <button type="button" id="nextBtn" class="btn-primary">Next Step</button>
+          <button type="submit" id="submit" class="btn-primary hide">Confirm</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>
