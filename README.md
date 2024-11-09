@@ -48,7 +48,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Here is my solution URL](https://github.com/sumitsah/mortgage-calculator)
+- Solution URL: [Here is my solution URL](https://github.com/sumitsah/multi-step-form)
 - Live Site URL: [Here is live site URL](https://multi-step-form-sumit.netlify.app/)
 
 ## My process
