@@ -460,6 +460,7 @@ input:checked+.slider:before {
 }
 
 .add-on-detail {
+    display: block;
     margin-top: 0.15rem;
     font-size: 0.75rem;
     color: var(--clr-neutral-light-gray);
