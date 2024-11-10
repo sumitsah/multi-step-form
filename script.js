@@ -20,7 +20,7 @@ const inputs = document.querySelectorAll(".input-text");
 const planError = document.querySelector(".plan");
 const plans = document.getElementsByName("plan");
 
-let currentTab = 0; // Current tab is set to be the first tab (0)
+let currentTab = 1; // Current tab is set to be the first tab (0)
 let selectedYearPlan = false;
 const plan = {
     arcade: 9,

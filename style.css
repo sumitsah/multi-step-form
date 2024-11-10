@@ -327,6 +327,7 @@ body {
 }
 
 .plan-rate {
+    display: block;
     font-family: 'ubunturegular';
     font-size: 0.85rem;
     color: var(--clr-neutral-cool-gray);

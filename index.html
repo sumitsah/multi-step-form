@@ -7,8 +7,8 @@
   <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <title>Frontend Mentor | Multi-step form</title>
+  <script src="script.js" type="module"></script>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" type="module" defer></script>
 </head>
 
 <body>
@@ -88,14 +88,14 @@
                 <label for="arcade" class="plan-label">Arcade
                   <input type="radio" id="arcade" class="plan-radio" name="plan" aria-describedby="plan-error">
 
-                  <div class="monthly-plan">
-                    <div class="plan-rate"> $9/mo </div>
-                  </div>
+                  <span class="monthly-plan">
+                    <span class="plan-rate"> $9/mo </span>
+                  </span>
 
-                  <div class="yearly-plan hide">
-                    <div class="plan-rate"> $90/yr </div>
-                    <div class="plan-discount"> 2 months free</div>
-                  </div>
+                  <span class="yearly-plan hide">
+                    <span class="plan-rate"> $90/yr </span>
+                    <span class="plan-discount"> 2 months free</span>
+                  </span>
                 </label>
               </div>
 
@@ -151,37 +151,37 @@
               <label for="online-service" class="add-on-label">
                 <input type="checkbox" name="add-on" class="addon-checkmark" id="online-service">
                 <span> Online service
-                  <div class="add-on-detail"> Access to multiplayer games</div>
+                  <span class="add-on-detail"> Access to multiplayer games</span>
                 </span>
               </label>
-              <div class="monthly-plan">
-                <div class="add-on-rate"> +$1/mo </div>
-              </div>
-              <div class="yearly-plan hide">
-                <div class="add-on-rate"> +$10/yr </div>
-              </div>
+              <span class="monthly-plan">
+                <span class="add-on-rate"> +$1/mo </span>
+              </span>
+              <span class="yearly-plan hide">
+                <span class="add-on-rate"> +$10/yr </span>
+              </span>
             </div>
 
             <div class="add-on-container">
               <label for="larger-storage" class="add-on-label">
                 <input type="checkbox" name="add-on" class="addon-checkmark" id="larger-storage">
                 <span> Larger storage
-                  <div class="add-on-detail"> Extra 1TB of cloud save </div>
+                  <span class="add-on-detail"> Extra 1TB of cloud save </span>
                 </span>
               </label>
-              <div class="monthly-plan">
-                <div class="add-on-rate"> +$2/mo </div>
-              </div>
-              <div class="yearly-plan hide">
-                <div class="add-on-rate"> +$20/yr </div>
-              </div>
+              <span class="monthly-plan">
+                <span class="add-on-rate"> +$2/mo </span>
+              </span>
+              <span class="yearly-plan hide">
+                <span class="add-on-rate"> +$20/yr </span>
+              </span>
             </div>
 
             <div class="add-on-container">
               <label for="customizable-profile" class="add-on-label">
                 <input type="checkbox" name="add-on" class="addon-checkmark" id="customizable-profile">
                 <span> Customizable Profile
-                  <div class="add-on-detail">Custom theme on your profile</div>
+                  <span class="add-on-detail">Custom theme on your profile</span>
                 </span>
               </label>
 
